@@ -1,70 +1,67 @@
 <!DOCTYPE html>
 <html lang="hu">
-	<head>
-		<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Munkanap Kalkulátor</title>
-				<link rel="stylesheet" href="styles.css">
-				</head>
-				<body>
-					<div class="container">
-						<h1>Munkanap Kalkulátor</h1>
-						<p>Kérlek, válaszd ki a hónapot, és add meg az adatokat!</p>
-						<!-- Hónap kiválasztása -->
-						<div class="form-group">
-							<label for="month">Hónap kiválasztása:</label>
-							<select id="month" onchange="setMaxDays()">
-								<option value="January" data-max-days="22">Január</option>
-								<option value="February" data-max-days="20">Február</option>
-								<option value="March" data-max-days="22">Március</option>
-								<option value="April" data-max-days="21">Április</option>
-							</select>
-						</div>
-						<!-- Ledolgozott napok száma -->
-						<div class="form-group">
-							<label for="workedDays">Ledolgozott napok száma:</label>
-							<input type="number" id="workedDays" placeholder="Pl. 21" min="0">
-							</div>
-							<!-- Céges lakás -->
-							<div class="form-group">
-								<p>Céges lakás?</p>
-								<label>
-									<input type="radio" name="companyHouse" value="yes"> Igen
-									</label>
-									<label>
-										<input type="radio" name="companyHouse" value="no" checked="checked"> Nem
-										</label>
-									</div>
-									<!-- Bejelentési forma -->
-									<div class="form-group">
-										<p>Bejelentési forma:</p>
-										<label>
-											<input type="radio" name="registration" value="hungarian" checked="checked"> Magyar
-											</label>
-											<label>
-												<input type="radio" name="registration" value="slovak"> Szlovák
-												</label>
-											</div>
-											<!-- Egyéb tartozás -->
-											<div class="form-group">
-												<p>Egyéb tartozás?</p>
-												<label>
-													<input type="radio" name="debt" value="yes" onclick="toggleDebtInput(true)"> Igen
-													</label>
-													<label>
-														<input type="radio" name="debt" value="no" onclick="toggleDebtInput(false)" checked="checked"> Nem
-														</label>
-													</div>
-													<!-- Tartozás összege -->
-													<div class="form-group" id="debtAmountGroup" style="display: none;">
-														<label for="debtAmount">Tartozás összege (€):</label>
-														<input type="number" id="debtAmount" placeholder="Pl. 100">
-														</div>
-														<!-- Számítás gomb -->
-														<button onclick="calculate()">Számítás</button>
-														<!-- Eredmény megjelenítése -->
-														<div id="result" class="result"></div>
-													</div>
-													<script src="script.js"></script>
-												</body>
-											</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Munkanap Kalkulátor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Munkanap Kalkulátor</h1>
+    <p>Kérlek, válaszd ki a hónapot, és add meg az adatokat!</p>
+
+    <!-- Hónap kiválasztása -->
+    <div class="form-group">
+      <label for="month">Hónap kiválasztása:</label>
+      <select id="month" onchange="setMaxDays()">
+        <option value="January" data-max-days="22">Január</option>
+        <option value="February" data-max-days="20">Február</option>
+        <option value="March" data-max-days="22">Március</option>
+        <option value="April" data-max-days="21">Április</option>
+      </select>
+    </div>
+
+    <!-- Ledolgozott napok száma -->
+    <div class="form-group">
+      <label for="workedDays">Ledolgozott napok száma:</label>
+      <input type="number" id="workedDays" placeholder="Pl. 21" min="0">
+    </div>
+
+    <!-- Céges lakás -->
+    <div class="form-group">
+      <p>Céges lakás?</p>
+      <label><input type="radio" name="companyHouse" value="yes"> Igen</label>
+      <label><input type="radio" name="companyHouse" value="no" checked="checked"> Nem</label>
+    </div>
+
+    <!-- Bejelentési forma -->
+    <div class="form-group">
+      <p>Bejelentési forma:</p>
+      <label><input type="radio" name="registration" value="hungarian" checked="checked"> Magyar</label>
+      <label><input type="radio" name="registration" value="slovak"> Szlovák</label>
+    </div>
+
+    <!-- Egyéb tartozás -->
+    <div class="form-group">
+      <p>Egyéb tartozás?</p>
+      <label><input type="radio" name="debt" value="yes" onclick="toggleDebtInput(true)"> Igen</label>
+      <label><input type="radio" name="debt" value="no" onclick="toggleDebtInput(false)" checked="checked"> Nem</label>
+    </div>
+
+    <!-- Tartozás összege -->
+    <div class="form-group" id="debtAmountGroup" style="display: none;">
+      <label for="debtAmount">Tartozás összege (€):</label>
+      <input type="number" id="debtAmount" placeholder="Pl. 100">
+    </div>
+
+    <!-- Számítás gomb -->
+    <button onclick="calculate()">Számítás</button>
+
+    <!-- Eredmény megjelenítése -->
+    <div id="result" class="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
